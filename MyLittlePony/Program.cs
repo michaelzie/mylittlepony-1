@@ -23,14 +23,19 @@ namespace MyLittlePony
 
             Game game = new Game();
 
-            foreach (Card cards in game.getCards())
+            foreach (Card card in game.getCards())
             {
-                Console.WriteLine(cards.getID() + "\t" + cards.getName() + "\t" + cards.getProperties());
+                Console.WriteLine("\n" + card.getPlayer() + "\t" +card.getID() + "\t" + card.getName());
+
+                for (int i = 0; i <= 3; i++)
+                {
+                    Console.WriteLine(card.getProperties()[i].getValue() + " " + card.getProperties()[i].getUnit());
+                }
             }
             
             foreach (Player player in game.getPlayers())
             {
-                Console.WriteLine(player.getName() + "\t" + player.getID());
+                Console.WriteLine("\n" + player.getName() + "\t" + player.getID());
             }
 
             Console.ReadKey();

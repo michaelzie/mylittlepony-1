@@ -18,14 +18,7 @@ namespace MyLittlePony
             this.setPlayer(player);
             this.setName(name);
             this.setID(id);
-            this.createProperties();
-
             this._properties = property;
-        }
-
-        private void createProperties(List<Property> properties)
-        {
-            throw new NotImplementedException();
         }
 
         public int getPlayer()
@@ -56,14 +49,6 @@ namespace MyLittlePony
         public void setID(string ID)
         {
             this._id = ID;
-        }
-
-        public void createProperties()
-        {
-            _properties.Add(new Property(156, "cm", true));
-            _properties.Add(new Property(2, "int", true));
-            _properties.Add(new Property(70, "km/h", true));
-            _properties.Add(new Property(10000, "Euro", true));
         }
 
         public List<Property> getProperties()

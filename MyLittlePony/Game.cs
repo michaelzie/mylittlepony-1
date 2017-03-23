@@ -33,16 +33,88 @@ namespace MyLittlePony
 
         public void createCards()
         {
-            //Card card = new Card();
-            //card.createProperties();
-            
-            Property property = new Property(156, "cm", true);
-            // 3 arrays
-            List<Property> _property = new List<Property>();
-            _property.Add(property);
+            int[] value = new int[16];
+            value[0] = 156;
+            value[1] = 2;
+            value[2] = 70;
+            value[3] = 10000;
+            value[4] = 165;
+            value[5] = 4;
+            value[6] = 120;
+            value[7] = 15000;
+            value[8] = 193;
+            value[9] = 4;
+            value[10] = 90;
+            value[11] = 9000;
+            value[12] = 123;
+            value[13] = 1;
+            value[14] = 95;
+            value[15] = 7500;
 
-            _cards.Add(new Card(1, "Island Pony", "G3", _property));
-            _cards.Add(new Card(1, "Shagya Araber", "G2", _property));
+            string[] unit = new string[16];
+            unit[0] = "cm";
+            unit[1] = "int";
+            unit[2] = "km/h";
+            unit[3] = "Euro";
+            unit[4] = "cm";
+            unit[5] = "int";
+            unit[6] = "km/h";
+            unit[7] = "Euro";
+            unit[8] = "cm";
+            unit[9] = "int";
+            unit[10] = "km/h";
+            unit[11] = "Euro";
+            unit[12] = "cm";
+            unit[13] = "int";
+            unit[14] = "km/h";
+            unit[15] = "Euro";
+
+            bool[] higherValueWins = new bool[16];
+            higherValueWins[0] = true;
+            higherValueWins[1] = true;
+            higherValueWins[2] = true;
+            higherValueWins[3] = true;
+            higherValueWins[4] = true;
+            higherValueWins[5] = true;
+            higherValueWins[6] = true;
+            higherValueWins[7] = true;
+            higherValueWins[8] = true;
+            higherValueWins[9] = true;
+            higherValueWins[10] = true;
+            higherValueWins[11] = true;
+            higherValueWins[12] = true;
+            higherValueWins[13] = true;
+            higherValueWins[14] = true;
+            higherValueWins[15] = true;
+
+            int[] player = new int[4];
+            player[0] = 1;
+            player[1] = 2;
+            player[2] = 3;
+            player[3] = 4;
+
+            string[] name = new string[4];
+            name[0] = "Pferd 1";
+            name[1] = "Pferd 2";
+            name[2] = "Pferd 3";
+            name[3] = "Pferd 4";
+
+            string[] id = new string[4];
+            id[0] = "A2";
+            id[1] = "G4";
+            id[2] = "E6";
+            id[3] = "D5";
+
+            for (int i = 0; i <= 3; i++)
+            {
+                List<Property> _properties = new List<Property>();
+
+                for (int j = 0; j <= 3; j++)
+                {
+                    _properties.Add(new Property(value[i*4+j], unit[i*4+j], higherValueWins[i*4+j]));
+                }
+                _cards.Add(new Card(player[i], name[i], id[i], _properties));
+            }
         }
 
         public List<Card> getCards()
